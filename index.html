@@ -1,0 +1,268 @@
+<!--
+  Demo: Digital Marketing & Content Writing Portfolio
+  File: Digital_Marketing_Content_Portfolio.html
+  Single-file HTML/CSS/JS demo you can open locally or push to GitHub Pages.
+  Instructions: Save as .html and open in browser. Replace text, images, links with yours.
+-->
+
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>তোমার নাম | Social Media & Content</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{--accent:#ff4d4d;--dark:#222;--muted:#666;--card:#fff;--glass:rgba(255,255,255,0.06)}
+    *{box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(180deg,#fafafa,#fff);color:var(--dark);-webkit-font-smoothing:antialiased}
+    header{backdrop-filter:blur(6px);position:sticky;top:0;z-index:40;background:rgba(255,255,255,0.8);border-bottom:1px solid #eee}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:700;color:var(--accent);letter-spacing:0.4px}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
+    nav a{color:var(--dark);text-decoration:none;font-weight:500}
+    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;display:inline-block}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .hero h1{font-size:clamp(28px,4vw,44px);margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .actions{display:flex;gap:12px}
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 8px 30px rgba(30,30,30,0.04)}
+
+    /* Services */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .service h4{margin:8px 0 6px}
+    .service p{color:var(--muted);font-size:14px}
+
+    /* Portfolio */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .project{overflow:hidden;border-radius:10px}
+    .project img{width:100%;height:160px;object-fit:cover;display:block}
+    .project .meta{padding:10px}
+
+    /* Testimonials */
+    .testi{display:flex;gap:12px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:999px;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+
+    footer{padding:34px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;padding:28px 0}
+      .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      nav ul{display:none}
+      .hero{padding:18px 0}
+      .portfolio-grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      header .menu-toggle{display:block}
+    }
+    .menu-toggle{display:none;border:0;background:transparent;font-size:18px}
+    .mobile-nav{display:none}
+    .show-mobile{display:block;padding:12px 0}
+
+    /* Contact form */
+    form input, form textarea{width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:8px;margin-bottom:10px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">YourName</div>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn" href="#contact">Hire Me</a>
+        <button class="menu-toggle" aria-label="menu" onclick="toggleMobile()"><i class="fa fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="container mobile-nav" id="mobileNav"></div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <p style="color:var(--accent);font-weight:600;margin:0 0 8px">Freelancer • Social Media & Content</p>
+        <h1>আপনার ব্র্যান্ডের জন্য Social Media Marketing ও Content Writing</h1>
+        <p>আমি কাস্টম কন্টেন্ট, ক্যাপশন, অ্যাড কপিস ও সোশ্যাল স্ট্রাটেজি তৈরি করি — যা এনগেজমেন্ট ও কনভার্সন বাড়ায়।</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Get Started</a>
+          <a href="#portfolio" style="padding:10px 14px;border-radius:10px;border:1px solid #eee;text-decoration:none;display:inline-block">View Work</a>
+        </div>
+        
+        <!-- Quick services preview -->
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card" style="min-width:160px"> 
+            <strong>Content Calendar</strong>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">মাসিক পোস্ট প্ল্যান ও কপিরাইটিং</p>
+          </div>
+          <div class="card" style="min-width:160px">
+            <strong>Ad Copy & Creatives</strong>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">কাস্টম Facebook/Instagram অ্যাড কপি</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="text-align:center">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc" alt="profile" style="width:100%;height:260px;object-fit:cover;border-radius:8px;margin-bottom:12px">
+          <h3 style="margin:0">Your Name</h3>
+          <p style="color:var(--muted);margin:6px 0 12px;font-size:14px">Social Media Marketer • Content Writer</p>
+          <p style="font-size:13px;color:var(--muted)">Available for freelance & remote contract work. Pricing starts at $120 per project.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" style="margin-top:28px">
+      <h2>Services</h2>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card service">
+          <i class="fa fa-bullhorn" style="color:var(--accent)"></i>
+          <h4>Social Media Marketing</h4>
+          <p>Campaign setup, audience targeting, and ad optimisation for Facebook, Instagram and TikTok.</p>
+        </div>
+        <div class="card service">
+          <i class="fa fa-pencil" style="color:var(--accent)"></i>
+          <h4>Content Writing</h4>
+          <p>Blog posts, product descriptions, ad copies and caption writing with SEO focus.</p>
+        </div>
+        <div class="card service">
+          <i class="fa fa-chart-line" style="color:var(--accent)"></i>
+          <h4>Strategy & Reporting</h4>
+          <p>Monthly strategy, content calendar and analytics reports that show ROI.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" style="margin-top:36px">
+      <h2>Portfolio</h2>
+      <p style="color:var(--muted);margin-top:6px">নিচে কিছু নমুনা কাজ — ক্লিক করলে বড় ক্যার্ড খুলবে (ডেমো)।</p>
+
+      <div class="portfolio-grid" style="margin-top:12px">
+        <div class="project card">
+          <img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?q=80&w=1200&auto=format&fit=crop" alt="Project 1">
+          <div class="meta">
+            <strong>Local Cafe Campaign</strong>
+            <p style="color:var(--muted);font-size:13px;margin:6px 0 0">Result: 45% increase in footfall via targeted ads.</p>
+          </div>
+        </div>
+        <div class="project card">
+          <img src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?q=80&w=1200&auto=format&fit=crop" alt="Project 2">
+          <div class="meta">
+            <strong>eCommerce Copywriting</strong>
+            <p style="color:var(--muted);font-size:13px;margin:6px 0 0">Product descriptions and email copies that lifted conversions.</p>
+          </div>
+        </div>
+        <div class="project card">
+          <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop" alt="Project 3">
+          <div class="meta">
+            <strong>Brand Launch Social Kit</strong>
+            <p style="color:var(--muted);font-size:13px;margin:6px 0 0">Content pack + 30 social posts for a product launch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="margin-top:36px">
+      <h2>Testimonials</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+        <div class="card testi">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" alt="client"></div>
+          <div>
+            <strong>আফসানা রহমান</strong>
+            <p style="margin:6px 0 0;color:var(--muted);font-size:14px">"চমৎকার কাজ — কনটেন্ট খুব দক্ষভাবে লিখেছেন, এনগেজমেন্ট বেড়ে গেছে।"</p>
+          </div>
+        </div>
+        <div class="card testi">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1545996124-8ad3c6b1d3a8?q=80&w=400&auto=format&fit=crop" alt="client"></div>
+          <div>
+            <strong>রহিম করিম</strong>
+            <p style="margin:6px 0 0;color:var(--muted);font-size:14px">"সময়মতো ডেলিভারি, রিপোর্টিং খুব পরিষ্কার। রেটিও ভাল ছিল।"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Contact -->
+    <section id="about" style="margin-top:36px;display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start">
+      <div>
+        <h2>About Me</h2>
+        <p style="color:var(--muted);margin-top:6px">আমি একটি ক্রিয়েটিভ মার্কেটিং ও কন্টেন্ট রাইটিং সার্ভিস প্রদান করি — ছোট থেকে বড় সব ব্র্যান্ডের জন্য। আমার কাজের ফোকাস: কনভার্সন, ব্র্যান্ড কনসিসটেন্সি, ও ডেটা-ড্রিভেন রেজল্টস।</p>
+        <ul style="margin-top:12px;color:var(--muted);">
+          <li>৫+ বছর ফ্রিল্যান্সিং অভিজ্ঞতা</li>
+          <li>ব্র্যান্ড স্ট্র্যাটেজি ও কন্টেন্ট ক্যালেন্ডার তৈরী</li>
+          <li>ফেসবুক ও ইনস্টাগ্রাম অ্যাড ম্যানেজমেন্ট</li>
+        </ul>
+      </div>
+
+      <div class="card" id="contact">
+        <h3 style="margin-top:0">Contact</h3>
+        <p style="color:var(--muted);font-size:14px;margin-top:6px">প্রোজেক্ট ডিটেইল পাঠান — আমি ২৪ ঘণ্টার মধ্যে রেসপন্ড করব।</p>
+        <form onsubmit="return submitForm(event)">
+          <input type="text" id="name" placeholder="Your name" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <textarea id="message" rows="5" placeholder="Project brief or message" required></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+        <div style="margin-top:10px;font-size:13px;color:var(--muted)">
+          Or reach me at: <br>
+          <a href="mailto:youremail@example.com">youremail@example.com</a>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px">
+          <a href="#" aria-label="facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" aria-label="instagram"><i class="fa fa-instagram"></i></a>
+          <a href="#" aria-label="linkedin"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin-top:36px;border-top:1px solid #f0f0f0;padding-top:18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div style="color:var(--muted)">© "YourName" — All rights reserved.</div>
+        <div style="color:var(--muted)">Made with ♥ for your Brand</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function toggleMobile(){
+      const nav = document.getElementById('mobileNav');
+      if(nav.classList.contains('show-mobile')){
+        nav.classList.remove('show-mobile');nav.innerHTML='';
+      } else {
+        nav.classList.add('show-mobile');
+        nav.innerHTML = '<ul style="list-style:none;padding:8px 0;margin:0;display:flex;flex-direction:column;gap:8px"><li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>'
+      }
+    }
+
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if(!name||!email||!msg){alert('Please fill all fields.');return false}
+      // Simple demo behavior: open mail client with subject and body prefilled.
+      const subject = encodeURIComponent('Website contact from '+name);
+      const body = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nMessage:\n'+msg);
+      window.location.href = 'mailto:youremail@example.com?subject='+subject+'&body='+body;
+      return false;
+    }
+  </script>
+</body>
+</html>
